@@ -1,0 +1,165 @@
+/* A playful start screen shared by this standalone game edition. */
+body {
+  background-image: linear-gradient(90deg, transparent 86%, #5078a11a 86%), linear-gradient(transparent 86%, #5078a11a 86%), radial-gradient(#d9806740 2px, transparent 2.5px);
+  background-size: 32px 32px, 32px 32px, 160px 160px;
+  background-position: 0 0, 0 0, 20px 20px;
+}
+.counter { min-height: 46px; border: 2px solid var(--ink); background: var(--gold-light); box-shadow: 4px 4px 0 var(--shadow); }
+.hero {
+  min-height: 540px;
+  background: var(--deep);
+  border: 4px solid var(--ink);
+  box-shadow: 10px 10px 0 var(--shadow), inset 0 0 0 5px var(--teal-bright);
+}
+.hero:before { inset: 0 auto auto 32px; width: 14px; height: 14px; border: 0; background: var(--gold-light); box-shadow: 14px 0 var(--gold-light), 28px 0 var(--gold-light), 42px 0 var(--coral); }
+.hero:after { inset: auto 28px 0 auto; width: 14px; height: 14px; background: var(--teal-bright); box-shadow: -14px 0 var(--teal-bright), -28px 0 var(--gold), -42px 0 var(--gold); }
+.hero-copy { padding-block: 8px; }
+.eyebrow { padding: 8px 11px; color: var(--deep); background: var(--gold-light); border: 2px solid var(--gold); box-shadow: 3px 3px 0 var(--coral); }
+.eyebrow .icon { color: var(--deep); }
+.hero h1 { color: var(--paper); text-shadow: 4px 4px 0 var(--ink); }
+.hero p { color: #e1f3ed; }
+.hero .primary {
+  min-height: 68px;
+  color: var(--deep);
+  background: var(--gold-light);
+  border: 3px solid var(--ink);
+  box-shadow: 0 7px 0 var(--gold), 4px 4px 0 var(--shadow);
+  font-size: 1.16rem;
+  animation: readyPulse 2.4s steps(2,end) infinite;
+}
+.hero .primary:hover { color: var(--deep); background: #ffe887; }
+.hero .primary .icon { width: 22px; height: 22px; }
+.hero-facts { gap: 9px; color: var(--deep); }
+.hero-facts span { padding: 8px 10px; background: var(--paper); border: 1px solid var(--teal-bright); box-shadow: 2px 2px 0 var(--shadow); }
+.hero-facts i { display: none; }
+.hero-art {
+  min-height: 350px;
+  overflow: hidden;
+  background-color: var(--teal-bright);
+  background-image: linear-gradient(90deg, transparent 88%, #ffffff32 88%), linear-gradient(transparent 88%, #ffffff32 88%);
+  background-size: 24px 24px;
+  border: 4px solid var(--paper);
+  box-shadow: 7px 7px 0 var(--gold);
+}
+.hero-art:before { top: 18px; right: 18px; width: 18px; height: 18px; background: var(--coral); box-shadow: 18px 0 var(--coral), 18px 18px var(--gold-light); }
+.hero-art:after { bottom: 22px; left: 16px; width: 12px; height: 12px; background: var(--gold-light); box-shadow: 12px 0 var(--gold-light), 24px 0 var(--coral); }
+.hero-animal { animation: mascotHop 3.2s steps(4,end) infinite; }
+.art-orbit { display: none; }
+.art-tag { top: 16px; left: 16px; padding: 9px 12px; color: var(--deep); background: var(--gold-light); border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--coral); text-transform: uppercase; letter-spacing: .04em; }
+.art-caption { position: absolute; z-index: 2; right: 14px; bottom: 14px; padding: 8px 11px; color: var(--paper); background: var(--deep); border: 2px solid var(--paper); box-shadow: 3px 3px 0 var(--coral); font-size: .75rem; font-weight: 1000; }
+@keyframes mascotHop { 0%, 80%, 100% { transform: translateY(0); } 84% { transform: translateY(-7px); } 90% { transform: translateY(0); } 95% { transform: translateY(-3px); } }
+@keyframes readyPulse { 0%, 88%, 100% { transform: translateY(0); filter: brightness(1); } 92% { transform: translateY(-2px); filter: brightness(1.08); } }
+@media(max-width:760px) { .hero { min-height: 0; } .hero-art { min-height: 280px; } }
+@media(max-width:520px) { .hero { padding: 26px 18px; } .hero-art { min-height: 230px; } .hero .primary { min-height: 60px; } }
+@media(prefers-reduced-motion:reduce) { .hero .primary, .hero-animal { animation: none; } }
+
+/* Keep the start screen focused on one obvious action for pre-readers. */
+.home-mode .brand-copy small,
+.home-mode .footer { display: none; }
+.home-mode .counter span { display: none; }
+.home-mode .counter { min-width: 52px; justify-content: center; }
+.home-mode .screen { max-width: 1000px; padding-block: 18px 24px; }
+.home-mode .hero { min-height: 0; }
+.home-mode .hero-copy { display: grid; justify-items: center; align-content: center; gap: 26px; }
+.home-mode .hero h1 { margin: 0; font-size: clamp(2.6rem, 6vw, 4.8rem); }
+.home-mode .hero .primary { min-width: min(100%, 340px); min-height: 88px; justify-content: center; gap: 14px; font-size: 1.65rem; }
+.home-mode .hero .primary .icon { width: 28px; height: 28px; }
+.home-mode .hero-art { min-height: 390px; }
+@media(max-width:760px) {
+  .home-mode .screen { padding-top: 10px; }
+  .home-mode .hero-copy { gap: 18px; }
+  .home-mode .hero-art { min-height: 280px; }
+}
+@media(max-width:520px) {
+  .home-mode .hero .primary { min-height: 74px; font-size: 1.4rem; }
+  .home-mode .hero-art { min-height: 230px; }
+}
+
+/* Bright, kid-friendly surfaces inspired by the supplied app reference, with crisp pixel shadows retained. */
+:root {
+  --gold: #ffbf28;
+  --gold-light: #fff0a8;
+  --coral: #ff684d;
+  --paper: #fffdf5;
+  --line: #f0d99a;
+}
+body {
+  background-color: var(--sand);
+  background-image:
+    radial-gradient(circle at 8% 12%, #ffbf2830 0 5px, transparent 6px),
+    radial-gradient(circle at 91% 28%, #ff684d20 0 7px, transparent 8px),
+    linear-gradient(90deg, transparent 94%, #ffbf2825 94%),
+    linear-gradient(transparent 94%, #ffbf2825 94%);
+  background-size: 140px 120px, 190px 170px, 36px 36px, 36px 36px;
+}
+.hero {
+  background: var(--paper);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 var(--shadow), 12px 12px 0 #ffbf284c;
+}
+.hero:before { border-radius: 13px; border-color: #ffbf2870; }
+.hero:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 24px;
+  right: 26px;
+  width: 13px;
+  height: 13px;
+  background: var(--coral);
+  box-shadow: -15px 0 var(--coral), -15px 15px var(--gold), 15px 15px var(--gold);
+  pointer-events: none;
+}
+.hero h1 { color: var(--deep); text-shadow: 2px 2px 0 var(--gold-light); }
+.hero .primary {
+  color: #fffdf7;
+  background: var(--coral);
+  border-color: var(--ink);
+  border-radius: 13px;
+  box-shadow: 0 6px 0 #d74934, 4px 4px 0 var(--shadow);
+}
+.hero .primary:hover { color: #fff; background: #f34f37; }
+.hero-art {
+  border-radius: 22px;
+  box-shadow: 7px 7px 0 var(--gold), 11px 11px 0 #ff684d40;
+}
+.art-tag { border-radius: 10px; }
+.level-card, .prompt-panel, .choice, .feedback, .complete-card {
+  border-radius: 15px;
+  box-shadow: 4px 5px 0 var(--shadow), 6px 7px 0 #ffbf2838;
+}
+.level-number { border-radius: 12px; color: var(--ink); background: var(--gold-light); }
+.primary, .secondary, .listen-button, .tiny-button { border-radius: 12px; min-height: 56px; }
+.primary, .listen-button { box-shadow: 0 4px 0 #087d67, 4px 4px 0 var(--shadow); }
+.listen-button { background: var(--teal); }
+.progress-track { height: 16px; border-radius: 999px; }
+.progress-track, .progress-fill { border-radius: 999px; }
+.choice { overflow: hidden; padding: 10px; background: #fffef9; }
+.choice-art { border-radius: 11px; }
+.choice-arrow { min-height: 48px; border-radius: 0 0 10px 10px; }
+.feedback.good { background: #d9f7d2; border-color: #52bd69; }
+.feedback.try { background: #fff1b5; border-color: var(--gold); }
+.home-mode .hero { padding: clamp(24px, 4vw, 46px); }
+.home-mode .hero-copy { text-align: center; }
+.home-mode .hero h1 { color: var(--deep); }
+.home-mode .hero .primary { margin-top: 0; min-height: 94px; font-size: clamp(1.55rem, 3vw, 2rem); }
+.home-mode .hero-art { background-color: var(--gold-light); }
+.home-mode .hero-animal { filter: drop-shadow(0 8px 0 #173b3620); }
+@media(max-width:900px) {
+  .home-mode .hero { grid-template-columns: 1fr; gap: 18px; padding: 24px; }
+  .home-mode .hero-art { grid-row: 1; min-height: clamp(220px, 34vw, 300px); }
+  .home-mode .hero-copy { grid-row: 2; }
+  .home-mode .hero-animal { width: min(58vw, 270px); }
+}
+@media(max-width:520px) {
+  .home-mode .hero { gap: 12px; padding: 15px; border-radius: 16px; }
+  .home-mode .screen { padding-bottom: 12px; }
+  .home-mode .hero-art { min-height: min(54vw, 230px); }
+  .home-mode .hero h1 { font-size: clamp(2.2rem, 11vw, 3rem); }
+  .home-mode .hero .primary { width: 100%; min-height: 78px; }
+  .home-mode .hero:after { top: 17px; right: 17px; transform: scale(.8); }
+  .choice { border-radius: 12px; }
+  .choice-arrow { min-height: 44px; }
+  .level-card, .prompt-panel, .feedback, .complete-card { border-radius: 12px; }
+  .listen-button { width: 100%; }
+}

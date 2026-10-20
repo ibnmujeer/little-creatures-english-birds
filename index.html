@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1c3967">
+  <meta name="description" content="A playful English bird game for young children to learn names through pictures and sound.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <title>Little Creatures · English Birds</title>
+  <link rel="stylesheet" href="./game.css">
+  <link rel="stylesheet" href="./arcade.css">
+</head>
+<body>
+  <main id="app" class="app" aria-busy="true">
+    <p class="loading" role="status">Getting the bird world ready…</p>
+  </main>
+  <div id="announcer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script src="./content.js" defer></script>
+  <script src="./game.js" defer></script>
+</body>
+</html>
